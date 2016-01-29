@@ -8,7 +8,9 @@ PROJECT(RenderWindowNoUiFile)
  
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
- 
+
+MESSAGE( STATUS ${VTK_VERSION} ${VTK_QT_VERSION})
+
 if(${VTK_VERSION} VERSION_GREATER "6" AND VTK_QT_VERSION VERSION_GREATER "4")
   # Instruct CMake to run moc automatically when needed.
   set(CMAKE_AUTOMOC ON)
