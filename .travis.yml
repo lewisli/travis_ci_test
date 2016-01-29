@@ -5,13 +5,13 @@ compiler:
 
 before_install:
   - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
-  - sudo add-apt-repository ppa:zarquon42/precise-backports -y
+  - sudo add-apt-repository ppa:beineri/opt-qt541 -y
   - sudo apt-get update -qq
-  - sudo apt-get install libvtk6-dev libeigen3-dev
-  - sudo apt-get install qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
-  - sudo apt-get install qt5-default qttools5-dev-tools
+  - sudo apt-get install qt54base qt54websockets
   - mkdir build
   - cd build
   - cmake ../
 
-script: make
+script: 
+  - source /opt/qt54/bin/qt54-env.sh
+  - make
